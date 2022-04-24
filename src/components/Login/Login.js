@@ -36,17 +36,17 @@ const Login = () => {
     }
 
     return (
-        <div className='form-container'>
+        <div className='form-container mt-5'>
             <div>
                 <h2 className='form-title'>Login</h2>
                 <form onSubmit={handleUserSignIn}>
                     <div className="input-group">
-                        <label htmlFor="email">Email</label>
-                        <input onBlur={handleEmailBlur} type="email" name="email" id="" required />
+                       
+                        <input onBlur={handleEmailBlur} type="email" placeholder='Email address' name="email" id="" required />
                     </div>
                     <div className="input-group">
-                        <label htmlFor="password">Password</label>
-                        <input onBlur={handlePasswordBlur} type="password" name="password" id="" required />
+                        
+                        <input onBlur={handlePasswordBlur} type="password" placeholder='Enter password' name="password" id="" required />
                     </div>
                     <p style={{ color: 'red' }}>{error?.message}</p>
                     {

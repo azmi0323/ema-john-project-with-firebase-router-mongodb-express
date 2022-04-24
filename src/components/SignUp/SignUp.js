@@ -43,21 +43,22 @@ const SignUp = () => {
     }
 
     return (
-        <div className='form-container'>
+        <div className='form-container mt-5'>
             <div>
                 <h2 className='form-title'>Sign Up</h2>
                 <form onSubmit={handleCreateUser}>
                     <div className="input-group">
-                        <label htmlFor="email">Email</label>
-                        <input onBlur={handleEmailBlur} type="email" name="email" id="" required/>
+                        
+                        <input onBlur={handleEmailBlur} type="email" placeholder='Email address' name="email" id="" required/>
                     </div>
                     <div className="input-group">
-                        <label htmlFor="password">Password</label>
-                        <input onBlur={handlePasswordBlur} type="password" name="password" id=""  required/>
+                        
+                        <input onBlur={handlePasswordBlur} type="password" placeholder='Password' name="password" id=""  required/>
                     </div>
                     <div className="input-group">
-                        <label htmlFor="confirm-password">Confirm Password</label>
-                        <input onBlur={handleConfirmPasswordBlur} type="password" name="confirm-password" id="" />
+                        
+                        <input onBlur={handleConfirmPasswordBlur} type="password" 
+                        placeholder='Confirm Password'  name="confirm-password" id="" />
                     </div>
                     <p style={{color: 'red'}}>{error}</p>
                     <input className='form-submit' type="submit" value="Sign Up"  required/>
