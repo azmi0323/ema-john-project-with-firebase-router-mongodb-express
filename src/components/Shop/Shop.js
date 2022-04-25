@@ -7,9 +7,10 @@ import Product from "../Product/Product";
 import "./Shop.css";
 
 const Shop = () => {
-  const [products, setProducts] = useProducts();
+  const [products] = useProducts();
   const [cart, setCart] = useState([]);
   const [pageCount, setPageCount] = useState(0);
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
     fetch("http://localhost:5000/productCount")
@@ -56,22 +57,33 @@ const Shop = () => {
   };
 
   return (
-    <div className="shop-container">
-      <div className="products-container">
-        {products.map((product) => (
-          <Product
-            key={product._id}
-            product={product}
-            handleAddToCart={handleAddToCart}
-          ></Product>
-        ))}
+    <div>
+      <div className="shop-container">
+        <div className="products-container">
+          {products.map((product) => (
+            <Product
+              key={product._id}
+              product={product}
+              handleAddToCart={handleAddToCart}
+            ></Product>
+          ))}
+        </div>
+
+        <div className="cart-container">
+          <Cart cart={cart}>
+            <Link to="/orders">
+              <button>Review Order </button>
+            </Link>
+          </Cart>
+        </div>
       </div>
-      <div className="cart-container">
-        <Cart cart={cart}>
-          <Link to="/orders">
-            <button>Review Order </button>
-          </Link>
-        </Cart>
+      <div className="pagination align-items-center justify-content-center">
+        {[...Array(pageCount).keys()].map((number) => (
+          <button 
+          className={page===number ? 'selected':''}
+          onClick={()=>{setPage(number)}}
+          >{number}</button>
+        ))}
       </div>
     </div>
   );

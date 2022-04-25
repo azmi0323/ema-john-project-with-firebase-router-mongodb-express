@@ -11,6 +11,27 @@
 .cart-container{
     background-color: rgba(255, 153, 0, 0.3);
 }
+
+.pagination button{
+    border: 1px solid orange;
+    margin-left: 4px;
+    border-radius: 10px;
+}
+.pagination .selected{
+    border: 1px solid orange;
+    margin-left: 4px;
+    border-radius: 10px;
+    background-color: orange;
+    color: white;
+}
+.pagination button:hover{
+    border: 1px solid orange;
+    margin-left: 4px;
+    color: white;
+    background-color: orange;
+    
+}
+
 @media screen and (max-width:1100px) {
     .products-container{
         grid-template-columns: repeat(2, 1fr);
