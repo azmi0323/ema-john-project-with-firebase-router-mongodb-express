@@ -17,6 +17,10 @@
     margin-left: 4px;
     border-radius: 10px;
 }
+.pagination{
+    margin-left: 4px;
+    border-radius: 10px;
+}
 .pagination .selected{
     border: 1px solid orange;
     margin-left: 4px;
